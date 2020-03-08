@@ -51,7 +51,7 @@
 		  <h1 class="header-author"><a href="/">Will Liu</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">默默的搬砖，默默的丧</p>
+		<p class="header-subtitle">诚心有为</p>
 		
 
 		<nav class="header-menu">
@@ -111,7 +111,7 @@
 			  <h1 class="header-author js-header-author">Will Liu</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>默默的搬砖，默默的丧<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>诚心有为<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -157,6 +157,89 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-cpu-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/08/cpu-01/">Cpu那些事--基础指标</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/08/cpu-01/" class="archive-article-date">
+  	<time datetime="2020-03-08T13:42:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CPU-load"><a href="#CPU-load" class="headerlink" title="CPU load"></a>CPU load</h2><blockquote>
+<p> 含义：平均负载是指单位时间内，系统处于可运行状态和不可中断状态的平均进程数，即平均活跃进程数,它和 CPU 使用率并没有直接关系</p>
+</blockquote>
+<ul>
+<li>可运行状态的进程，是指正在使用 CPU 或者正在等待 CPU 的进程，也就是我们常用 ps 命令看到的，处于 R 状态（Running 或 Runnable）的进程。</li>
+<li>不可中断状态的进程则是正处于内核态关键流程中的进程，并且这些流程是不可打断的，比如最常见的是等待硬件设备的 I/O 响应，也就是我们在 ps 命令中看到的 D 状态（Uninterruptible Sleep，也称为 Disk Sleep）的进程</li>
+</ul>
+<h2 id="CPU-Usage"><a href="#CPU-Usage" class="headerlink" title="CPU Usage"></a>CPU Usage</h2><blockquote>
+<p> 含义： CPU使用率，是除了空闲时间外其他时间占总花间的百分比，为了计算CPU使用率，性能工具会隔一段时间去两次值，做差后在计算这段时间内的CPU平均使用率。这里简单介绍一下CPU时间，为了维护CPU时间，Linux通过事先定义节拍率(HZ)，触发时间中断并使用全局变量Jiffies记录开机以来的节拍数，每发生一次中断,Jiffies变量+1。但是这个节拍率是内核变量，用户空间的程序无法直接访问，为了方便用户空间进程使用这个变量，系统提供了用户空间的节拍率USER_HZ。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Linux—cpu</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/08/cpu-01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-cpu-load" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -392,6 +475,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Linux—cpu</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

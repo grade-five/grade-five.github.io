@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>My first article | Grade-Five</title>
+  <title>Cpu那些事--基础指标 | Grade-Five</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CPU Load检测CPU load的方式 系统参数  12302:34:03 &#x2F;&#x2F;当前时间up 2 days, 20:14 &#x2F;&#x2F;系统运行时间系统运行时间1 user &#x2F;&#x2F;正在登录用户数">
+  <meta name="description" content="CPU load  含义：平均负载是指单位时间内，系统处于可运行状态和不可中断状态的平均进程数，即平均活跃进程数,它和 CPU 使用率并没有直接关系   可运行状态的进程，是指正在使用 CPU 或者正在等待 CPU 的进程，也就是我们常用 ps 命令看到的，处于 R 状态（Running 或 Runnable）的进程。 不可中断状态的进程则是正处于内核态关键流程中的进程，并且这些流程是不可打断的，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My first article">
-<meta property="og:url" content="http://yoursite.com/2020/03/08/cpu-load/index.html">
+<meta property="og:title" content="Cpu那些事--基础指标">
+<meta property="og:url" content="http://yoursite.com/2020/03/08/cpu-01/index.html">
 <meta property="og:site_name" content="Grade-Five">
-<meta property="og:description" content="CPU Load检测CPU load的方式 系统参数  12302:34:03 &#x2F;&#x2F;当前时间up 2 days, 20:14 &#x2F;&#x2F;系统运行时间系统运行时间1 user &#x2F;&#x2F;正在登录用户数">
+<meta property="og:description" content="CPU load  含义：平均负载是指单位时间内，系统处于可运行状态和不可中断状态的平均进程数，即平均活跃进程数,它和 CPU 使用率并没有直接关系   可运行状态的进程，是指正在使用 CPU 或者正在等待 CPU 的进程，也就是我们常用 ps 命令看到的，处于 R 状态（Running 或 Runnable）的进程。 不可中断状态的进程则是正处于内核态关键流程中的进程，并且这些流程是不可打断的，">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-08T09:54:07.000Z">
-<meta property="article:modified_time" content="2020-03-08T10:13:11.000Z">
+<meta property="article:published_time" content="2020-03-08T13:42:58.000Z">
+<meta property="article:modified_time" content="2020-03-08T13:55:34.000Z">
 <meta property="article:author" content="Will Liu">
+<meta property="article:tag" content="Linux—cpu">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Grade-Five" type="application/atom+xml">
@@ -158,32 +159,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-cpu-load" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-cpu-01" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      My first article
+      Cpu那些事--基础指标
     </h1>
   
 
         
-        <a href="/2020/03/08/cpu-load/" class="archive-article-date">
-  	<time datetime="2020-03-08T09:54:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
+        <a href="/2020/03/08/cpu-01/" class="archive-article-date">
+  	<time datetime="2020-03-08T13:42:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="CPU-Load"><a href="#CPU-Load" class="headerlink" title="CPU Load"></a>CPU Load</h1><h2 id="检测CPU-load的方式"><a href="#检测CPU-load的方式" class="headerlink" title="检测CPU load的方式"></a>检测CPU load的方式</h2><ul>
-<li>系统参数<h6 id=""><a href="#" class="headerlink" title=""></a></h6></li>
+        <h2 id="CPU-load"><a href="#CPU-load" class="headerlink" title="CPU load"></a>CPU load</h2><blockquote>
+<p> 含义：平均负载是指单位时间内，系统处于可运行状态和不可中断状态的平均进程数，即平均活跃进程数,它和 CPU 使用率并没有直接关系</p>
+</blockquote>
+<ul>
+<li>可运行状态的进程，是指正在使用 CPU 或者正在等待 CPU 的进程，也就是我们常用 ps 命令看到的，处于 R 状态（Running 或 Runnable）的进程。</li>
+<li>不可中断状态的进程则是正处于内核态关键流程中的进程，并且这些流程是不可打断的，比如最常见的是等待硬件设备的 I/O 响应，也就是我们在 ps 命令中看到的 D 状态（Uninterruptible Sleep，也称为 Disk Sleep）的进程</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">02:34:03 &#x2F;&#x2F;当前时间</span><br><span class="line">up 2 days, 20:14 &#x2F;&#x2F;系统运行时间</span><br><span class="line">系统运行时间1 user &#x2F;&#x2F;正在登录用户数</span><br></pre></td></tr></table></figure>
-
-
+<h2 id="CPU-Usage"><a href="#CPU-Usage" class="headerlink" title="CPU Usage"></a>CPU Usage</h2><blockquote>
+<p> 含义： CPU使用率，是除了空闲时间外其他时间占总花间的百分比，为了计算CPU使用率，性能工具会隔一段时间去两次值，做差后在计算这段时间内的CPU平均使用率。这里简单介绍一下CPU时间，为了维护CPU时间，Linux通过事先定义节拍率(HZ)，触发时间中断并使用全局变量Jiffies记录开机以来的节拍数，每发生一次中断,Jiffies变量+1。但是这个节拍率是内核变量，用户空间的程序无法直接访问，为了方便用户空间进程使用这个变量，系统提供了用户空间的节拍率USER_HZ。</p>
+</blockquote>
 
       
 
@@ -218,6 +223,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Linux—cpu</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -268,7 +284,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/08/cpu-load/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/08/cpu-01/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,18 +298,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/08/cpu-01/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Cpu那些事--基础指标
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/08/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2020/03/08/cpu-load/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">My first article</div>
       <i class="icon-circle-right"></i>
     </a>
   
