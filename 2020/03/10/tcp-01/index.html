@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>TCP-三握四挥 | Grade-Five</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12 TCP 三次握手握手前： 从最开始双方都处于CLOSED状态。然后服务端开始监听某个端口，进入了LISTEN状态  123客户端-&gt;&gt;服务端: SYN（seq &#x3D; x）服务端-&gt;&gt;客户端: SYN(seq&#x3D;y) ACK(ACK&#x3D; x+1)客户端-&gt;&gt;服务端: ACK（ACK&#x3D;y+1）   第一次握手： 建立连接时，客">
+  <meta name="description" content="TCP 三次握手握手前： 从最开始双方都处于CLOSED状态。然后服务端开始监听某个端口，进入了LISTEN状态  123客户端-&gt;&gt;服务端: SYN（seq &#x3D; x）服务端-&gt;&gt;客户端: SYN(seq&#x3D;y) ACK(ACK&#x3D; x+1)客户端-&gt;&gt;服务端: ACK（ACK&#x3D;y+1）   第一次握手： 建立连接时，客户端主">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP-三握四挥">
 <meta property="og:url" content="http://yoursite.com/2020/03/10/tcp-01/index.html">
 <meta property="og:site_name" content="Grade-Five">
-<meta property="og:description" content="12 TCP 三次握手握手前： 从最开始双方都处于CLOSED状态。然后服务端开始监听某个端口，进入了LISTEN状态  123客户端-&gt;&gt;服务端: SYN（seq &#x3D; x）服务端-&gt;&gt;客户端: SYN(seq&#x3D;y) ACK(ACK&#x3D; x+1)客户端-&gt;&gt;服务端: ACK（ACK&#x3D;y+1）   第一次握手： 建立连接时，客">
+<meta property="og:description" content="TCP 三次握手握手前： 从最开始双方都处于CLOSED状态。然后服务端开始监听某个端口，进入了LISTEN状态  123客户端-&gt;&gt;服务端: SYN（seq &#x3D; x）服务端-&gt;&gt;客户端: SYN(seq&#x3D;y) ACK(ACK&#x3D; x+1)客户端-&gt;&gt;服务端: ACK（ACK&#x3D;y+1）   第一次握手： 建立连接时，客户端主">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-10T04:40:00.000Z">
-<meta property="article:modified_time" content="2020-03-09T17:41:35.000Z">
+<meta property="article:modified_time" content="2020-03-09T17:42:33.000Z">
 <meta property="article:author" content="Will Liu">
 <meta property="article:tag" content="tcp">
 <meta name="twitter:card" content="summary">
@@ -179,8 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="TCP-三次握手"><a href="#TCP-三次握手" class="headerlink" title="TCP 三次握手"></a>TCP 三次握手</h2><h5 id="握手前："><a href="#握手前：" class="headerlink" title="握手前："></a>握手前：</h5><ul>
+        <h2 id="TCP-三次握手"><a href="#TCP-三次握手" class="headerlink" title="TCP 三次握手"></a>TCP 三次握手</h2><h5 id="握手前："><a href="#握手前：" class="headerlink" title="握手前："></a>握手前：</h5><ul>
 <li>从最开始双方都处于CLOSED状态。然后服务端开始监听某个端口，进入了LISTEN状态</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">客户端-&gt;&gt;服务端: SYN（seq &#x3D; x）</span><br><span class="line">服务端-&gt;&gt;客户端: SYN(seq&#x3D;y) ACK(ACK&#x3D; x+1)</span><br><span class="line">客户端-&gt;&gt;服务端: ACK（ACK&#x3D;y+1）</span><br></pre></td></tr></table></figure>
