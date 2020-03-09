@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Grade-Five</title>
+  <title>TCP-三握四挥 | Grade-Five</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="##TCP 三次握手 握手前： 从最开始双方都处于CLOSED状态。然后服务端开始监听某个端口，进入了LISTEN状态  第一次握手： 建立连接时，客户端主动发起连接，发送 SYN , 自己变成了SYN-SENT状态，等待服务器确认；  第二次握手： 服务端接收到，需确认客户端的SYN（ack&#x3D;x+1），返回SYN和ACK(对应客户端发来的SYN)，自己变成了SYN-REVD  第三次握手： 客户">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2020/03/08/hello-world/index.html">
+<meta property="og:title" content="TCP-三握四挥">
+<meta property="og:url" content="http://yoursite.com/2020/03/10/tcp-01/index.html">
 <meta property="og:site_name" content="Grade-Five">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="##TCP 三次握手 握手前： 从最开始双方都处于CLOSED状态。然后服务端开始监听某个端口，进入了LISTEN状态  第一次握手： 建立连接时，客户端主动发起连接，发送 SYN , 自己变成了SYN-SENT状态，等待服务器确认；  第二次握手： 服务端接收到，需确认客户端的SYN（ack&#x3D;x+1），返回SYN和ACK(对应客户端发来的SYN)，自己变成了SYN-REVD  第三次握手： 客户">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-08T08:57:33.000Z">
-<meta property="article:modified_time" content="2020-03-08T08:57:33.000Z">
+<meta property="article:published_time" content="2020-03-10T04:40:00.000Z">
+<meta property="article:modified_time" content="2020-03-09T17:31:38.000Z">
 <meta property="article:author" content="Will Liu">
+<meta property="article:tag" content="linux_tcp">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Grade-Five" type="application/atom+xml">
@@ -158,39 +159,103 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="page-tcp-01" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      TCP-三握四挥
     </h1>
   
 
         
-        <a href="/2020/03/08/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-08T08:57:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
+        <a href="/2020/03/10/tcp-01/" class="archive-article-date">
+  	<time datetime="2020-03-10T04:40:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>##TCP 三次握手</p>
+<h5 id="握手前："><a href="#握手前：" class="headerlink" title="握手前："></a>握手前：</h5><ul>
+<li>从最开始双方都处于CLOSED状态。然后服务端开始监听某个端口，进入了LISTEN状态</li>
+</ul>
+<h5 id="第一次握手："><a href="#第一次握手：" class="headerlink" title="第一次握手："></a>第一次握手：</h5><ul>
+<li>建立连接时，客户端主动发起连接，发送 SYN , 自己变成了SYN-SENT状态，等待服务器确认；</li>
+</ul>
+<h5 id="第二次握手："><a href="#第二次握手：" class="headerlink" title="第二次握手："></a>第二次握手：</h5><ul>
+<li>服务端接收到，需确认客户端的SYN（ack=x+1），返回SYN和ACK(对应客户端发来的SYN)，自己变成了SYN-REVD</li>
+</ul>
+<h5 id="第三次握手："><a href="#第三次握手：" class="headerlink" title="第三次握手："></a>第三次握手：</h5><ul>
+<li><p>客户端收到服务器的SYN+ACK包。再次发送确认包ACK(ack=y+1），自己变成了ESTABLISHED状态；服务端收到ACK之后，也变成了ESTABLISHED状态，完成三次握手建立简介</p>
+<p> <code>SYN：同步序列编号</code> <code>ACK： 确认号是否有效，一般置为1</code></p>
+<p> <code>凡是需要对端确认的，一定消耗TCP报文的序列号</code>  </p>
+</li>
+</ul>
+<hr>
+<p>##TCP 四次握手</p>
+<p>&hearts; 四次挥手即TCP连接的释放(解除)。连接的释放必须是一方主动释放，另一方被动释放</p>
+<h5 id="挥手前："><a href="#挥手前：" class="headerlink" title="挥手前："></a>挥手前：</h5><ul>
+<li>刚开始双方处于ESTABLISHED状态。</li>
+</ul>
+<h5 id="第一次挥手："><a href="#第一次挥手：" class="headerlink" title="第一次挥手："></a>第一次挥手：</h5><ul>
+<li>客户端上的某个进程，主动关闭连接，发送FIN（seq = u）报文给服务端，然后进入FIN_WAIT_1（终止等待1）状态</li>
+</ul>
+<h5 id="第二次挥手："><a href="#第二次挥手：" class="headerlink" title="第二次挥手："></a>第二次挥手：</h5><ul>
+<li>服务端收到FIN报文，回应一个ACK （ACK = u + 1）报文，进入CLOSED_WAIT （关闭等待）状态；TCP服务器通知高层的应用进程，客户端向服务器的方向就释放了，这时候处于半关闭状态，即客户端已经没有数据要发送了，但是服务器若发送数据，客户端依然要接受。这个状态还要持续一段时间，也就是整个CLOSE-WAIT状态持续的时间。</li>
+<li>客户端收到服务器的确认请求后，此时，客户端就进入FIN-WAIT-2（终止等待2）状态，等待服务器发送连接释放报文（在这之前还需要接受服务器发送的最后的数据）</li>
+</ul>
+<h5 id="第三次挥手："><a href="#第三次挥手：" class="headerlink" title="第三次挥手："></a>第三次挥手：</h5><ul>
+<li>服务器将最后的数据发送完毕后，就向客户端发送连接释放报文，FIN=1，ack=u+1，由于在半关闭状态，服务器很可能又发送了一些数据，假定此时的序列号为seq=w，此时，服务器就进入了LAST-ACK（最后确认）状态，等待客户端的确认。</li>
+</ul>
+<h5 id="第四次挥手："><a href="#第四次挥手：" class="headerlink" title="第四次挥手："></a>第四次挥手：</h5><ul>
+<li>客户端收到服务器的连接释放报文后，必须发出确认，ACK=1，ack=w+1，而自己的序列号是seq=u+1，此时，客户端就进入了TIME-WAIT（时间等待）状态。<blockquote>
+<p>注意此时TCP连接还没有释放，必须经过2∗∗MSL（最长报文段寿命）的时间后，当客户端撤销相应的TCB后，才进入CLOSED状态。</p>
+</blockquote>
+</li>
+<li>服务器只要收到了客户端发出的确认，立即进入CLOSED状态。同样，撤销TCB后，就结束了这次的TCP连接。可以看到，服务器结束TCP连接的时间要比客户端早一些</li>
+</ul>
+<h6 id="MSL：指一个片段在网络中最大的存活时间，2MSL就是一个发送和一个回复所需的最大时间"><a href="#MSL：指一个片段在网络中最大的存活时间，2MSL就是一个发送和一个回复所需的最大时间" class="headerlink" title="MSL：指一个片段在网络中最大的存活时间，2MSL就是一个发送和一个回复所需的最大时间"></a>MSL：指一个片段在网络中最大的存活时间，2MSL就是一个发送和一个回复所需的最大时间</h6><pre><code>1 个 MSL 确保四次挥手中主动关闭方最后的 ACK 报文最终能达到对端
+ 1 个 MSL 确保对端没有收到 ACK 重传的 FIN 报文可以到达</code></pre><h2 id="TCP-的拥塞控制"><a href="#TCP-的拥塞控制" class="headerlink" title="TCP 的拥塞控制"></a>TCP 的拥塞控制</h2><p>#####TCP 每条连接都需要维护两个核心状态:</p>
+<ol>
+<li>拥塞窗口（Congestion Window，cwnd）</li>
+<li>慢启动阈值（Slow Start Threshold，ssthresh）</li>
+</ol>
+<p>#####涉及到的算法有这几个:</p>
+<ul>
+<li>慢启动</li>
+<li>拥塞避免</li>
+<li>快速重传和快速恢复</li>
+</ul>
+<h5 id="拥塞窗口"><a href="#拥塞窗口" class="headerlink" title="拥塞窗口"></a>拥塞窗口</h5><p>拥塞窗口（Congestion Window，cwnd）是指目前自己还能传输的数据量大小，用来限制的是发送窗口的大小</p>
+<ul>
+<li>接收窗口(rwnd)是接收端给的限制</li>
+<li>拥塞窗口(cwnd)是发送端的限制</li>
+</ul>
+<h6 id="有了这两个窗口，如何来计算发送窗口？"><a href="#有了这两个窗口，如何来计算发送窗口？" class="headerlink" title="有了这两个窗口，如何来计算发送窗口？"></a>有了这两个窗口，如何来计算发送窗口？</h6><p><code>发送窗口大小 = min(rwnd, cwnd)，取两者的较小值。而拥塞控制，就是来控制cwnd的变化。</code></p>
+<h5 id="慢启动"><a href="#慢启动" class="headerlink" title="慢启动"></a>慢启动</h5><p>刚开始进入传输数据的时候，你是不知道现在的网路到底是稳定还是拥堵的，如果做的太激进，发包太急，那么疯狂丢包，造成雪崩式的网络灾难。<br>因此，拥塞控制首先就是要采用一种保守的算法来慢慢地适应整个网路，这种算法叫慢启动。<br><strong>运作过程如下:</strong></p>
+<ul>
+<li>首先，三次握手，双方宣告自己的接收窗口大小</li>
+<li>双方初始化自己的拥塞窗口(cwnd)大小</li>
+</ul>
+<ol>
+<li>在开始传输的一段时间，发送端每收到一个 ACK，拥塞窗口大小加 1，也就是说，每经过一个 RTT，cwnd 翻倍。如果说初始窗口为 10，那么第一轮 10 个报文传完且发送端收到 ACK 后，cwnd 变为 20，第二轮变为 40，第三轮变为 80，依次类推。<br>增加会有阈值控制，阈值叫做慢启动阈值， cwnd 到达这个阈值之后 就不会在增长了</li>
+</ol>
+<h6 id="在到达阈值后，如何来控制-cwnd-的大小呢？这就是拥塞避免做的事情了。"><a href="#在到达阈值后，如何来控制-cwnd-的大小呢？这就是拥塞避免做的事情了。" class="headerlink" title="在到达阈值后，如何来控制 cwnd 的大小呢？这就是拥塞避免做的事情了。"></a>在到达阈值后，如何来控制 cwnd 的大小呢？这就是拥塞避免做的事情了。</h6><h5 id="拥塞避免"><a href="#拥塞避免" class="headerlink" title="拥塞避免"></a>拥塞避免</h5><p>原来每收到一个 ACK，cwnd 加1，现在到达阈值了，cwnd 只能加这么一点: 1 / cwnd。那你仔细算算，一轮 RTT 下来，收到 cwnd 个 ACK, 那最后拥塞窗口的大小 cwnd 总共才增加 1。<br>也就是说，以前一个 RTT 下来，cwnd翻倍，现在cwnd只是增加 1 而已。当然，慢启动和拥塞避免是一起作用的，是一体的。</p>
+<h4 id="快速重传和快速恢复"><a href="#快速重传和快速恢复" class="headerlink" title="快速重传和快速恢复"></a>快速重传和快速恢复</h4><h5 id="快速重传"><a href="#快速重传" class="headerlink" title="快速重传"></a>快速重传</h5><p>在 TCP 传输的过程中，如果发生了丢包，即接收端发现数据段不是按序到达的时候，接收端的处理是重复发送之前的 ACK。</p>
+<p>比如第 5 个包丢了，即使第 6、7 个包到达的接收端，接收端也一律返回第 4 个包的 ACK。当发送端收到 3 个重复的 ACK 时，意识到丢包了，于是马上进行重传，不用等到一个 RTO 的时间到了才重传。</p>
+<p>这就是快速重传，它解决的是是否需要重传的问题。</p>
+<h5 id="选择性重传"><a href="#选择性重传" class="headerlink" title="选择性重传"></a>选择性重传</h5><p>那你可能会问了，既然要重传，那么只重传第 5 个包还是第5、6、7 个包都重传呢？<br>当然第 6、7 个都已经到达了，TCP 的设计者也不傻，已经传过去干嘛还要传？干脆记录一下哪些包到了，哪些没到，针对性地重传。</p>
+<p>在收到发送端的报文后，接收端回复一个 ACK 报文，那么在这个报文首部的可选项中，就可以加上SACK这个属性，通过left edge和right edge告知发送端已经收到了哪些区间的数据报。因此，即使第 5 个包丢包了，当收到第 6、7 个包之后，接收端依然会告诉发送端，这两个包到了。剩下第 5 个包没到，就重传这个包。这个过程也叫做选择性重传(SACK，Selective Acknowledgment)，它解决的是如何重传的问题。</p>
+<h5 id="快速恢复快速恢复"><a href="#快速恢复快速恢复" class="headerlink" title="快速恢复快速恢复"></a>快速恢复快速恢复</h5><p>当然，发送端收到三次重复 ACK 之后，发现丢包，觉得现在的网络已经有些拥塞了，自己会进入快速恢复阶段。</p>
+<h6 id="在这个阶段，发送端如下改变："><a href="#在这个阶段，发送端如下改变：" class="headerlink" title="在这个阶段，发送端如下改变："></a>在这个阶段，发送端如下改变：</h6><ul>
+<li>拥塞阈值降低为 cwnd 的一半</li>
+<li>cwnd 的大小变为拥塞阈值</li>
+<li>cwnd 线性增加</li>
+</ul>
 
       
 
@@ -225,6 +290,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">linux_tcp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -275,7 +351,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/08/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/10/tcp-01/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -289,15 +365,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/08/cpu-load/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          My first article
-        
-      </div>
-    </a>
   
+    <a href="/2020/03/08/cpu-01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Cpu那些事--基础指标</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
