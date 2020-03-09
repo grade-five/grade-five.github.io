@@ -178,10 +178,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##TCP 三次握手</p>
-<h5 id="握手前："><a href="#握手前：" class="headerlink" title="握手前："></a>握手前：</h5><ul>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="TCP-三次握手"><a href="#TCP-三次握手" class="headerlink" title="TCP 三次握手"></a>TCP 三次握手</h2><h5 id="握手前："><a href="#握手前：" class="headerlink" title="握手前："></a>握手前：</h5><ul>
 <li>从最开始双方都处于CLOSED状态。然后服务端开始监听某个端口，进入了LISTEN状态</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">客户端-&gt;&gt;服务端: SYN（seq &#x3D; x）</span><br><span class="line">服务端-&gt;&gt;客户端: SYN(seq&#x3D;y) ACK(ACK&#x3D; x+1)</span><br><span class="line">客户端-&gt;&gt;服务端: ACK（ACK&#x3D;y+1）</span><br></pre></td></tr></table></figure>
+
+
 <h5 id="第一次握手："><a href="#第一次握手：" class="headerlink" title="第一次握手："></a>第一次握手：</h5><ul>
 <li>建立连接时，客户端主动发起连接，发送 SYN , 自己变成了SYN-SENT状态，等待服务器确认；</li>
 </ul>
@@ -218,13 +221,11 @@
 <li>服务器只要收到了客户端发出的确认，立即进入CLOSED状态。同样，撤销TCB后，就结束了这次的TCP连接。可以看到，服务器结束TCP连接的时间要比客户端早一些</li>
 </ul>
 <h6 id="MSL：指一个片段在网络中最大的存活时间，2MSL就是一个发送和一个回复所需的最大时间"><a href="#MSL：指一个片段在网络中最大的存活时间，2MSL就是一个发送和一个回复所需的最大时间" class="headerlink" title="MSL：指一个片段在网络中最大的存活时间，2MSL就是一个发送和一个回复所需的最大时间"></a>MSL：指一个片段在网络中最大的存活时间，2MSL就是一个发送和一个回复所需的最大时间</h6><pre><code>1 个 MSL 确保四次挥手中主动关闭方最后的 ACK 报文最终能达到对端
- 1 个 MSL 确保对端没有收到 ACK 重传的 FIN 报文可以到达</code></pre><h2 id="TCP-的拥塞控制"><a href="#TCP-的拥塞控制" class="headerlink" title="TCP 的拥塞控制"></a>TCP 的拥塞控制</h2><p>#####TCP 每条连接都需要维护两个核心状态:</p>
-<ol>
+1 个 MSL 确保对端没有收到 ACK 重传的 FIN 报文可以到达</code></pre><h2 id="TCP-的拥塞控制"><a href="#TCP-的拥塞控制" class="headerlink" title="TCP 的拥塞控制"></a>TCP 的拥塞控制</h2><h5 id="TCP-每条连接都需要维护两个核心状态"><a href="#TCP-每条连接都需要维护两个核心状态" class="headerlink" title="TCP 每条连接都需要维护两个核心状态:"></a>TCP 每条连接都需要维护两个核心状态:</h5><ol>
 <li>拥塞窗口（Congestion Window，cwnd）</li>
 <li>慢启动阈值（Slow Start Threshold，ssthresh）</li>
 </ol>
-<p>#####涉及到的算法有这几个:</p>
-<ul>
+<h5 id="涉及到的算法有这几个"><a href="#涉及到的算法有这几个" class="headerlink" title="涉及到的算法有这几个:"></a>涉及到的算法有这几个:</h5><ul>
 <li>慢启动</li>
 <li>拥塞避免</li>
 <li>快速重传和快速恢复</li>
@@ -268,7 +269,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">linux_tcp</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tcp</a>
         		</li>
       		
 		</ul>
@@ -646,7 +647,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">linux_tcp</a>
+                <a href="javascript:void(0)" class="js-tag color4">tcp</a>
               </li>
             
             <div class="clearfix"></div>
